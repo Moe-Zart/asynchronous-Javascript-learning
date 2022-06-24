@@ -93,13 +93,28 @@ console.log("person 4: shows ticket");
 console.log("person 5: shows ticket");
 */
 
-
 console.log("person 1: shows ticket");
 console.log("person 2: shows ticket");
 const getEverything = async () => {
+  const promiseFriendBringsTicket = new Promise((resolve, reject) => {
+    setTimeout(() =>
+      resolve("ticket"), 3000);
+  });
+  const getPopcorn = new Promise((resolve, reject) => resolve( ", popcorn"));
+  const getButter = new Promise((resolve, reject) => resolve( ", butter"));
 
+  let ticket = await promiseFriendBringsTicket; //await is just a better version of .then
+  console.log('"lets go get popcorn"');
+
+  let popcorn = await getPopcorn;
+  console.log('"we need butter"');
+
+  let butter = await getButter;
+  return ticket;
 };
-getEverything().then((message) => console.log(message));
+getEverything().then((t) => {
+  console.log("person 3: shows "+t);
+});
 
 console.log("person 4: shows ticket");
 console.log("person 5: shows ticket");
