@@ -55,6 +55,7 @@ promise.then(user => {
 })
 */
 
+/*
 console.log("person 1: shows ticket");
 console.log("person 2: shows ticket");
 //i am person 3 and i dont have ticket, but i make a promise to the ticketer that my
@@ -78,5 +79,27 @@ const getButter = getPopcorn.then((t) => {
   return new Promise((resolve, reject) => resolve(t + ", butter"));
 });
 getButter.then((t) => console.log(t));
+console.log("person 4: shows ticket");
+console.log("person 5: shows ticket");
+*/
+/*
+console.log("person 1: shows ticket");
+console.log("person 2: shows ticket");
+//async functions always return a promise
+const getEverything = async () => "get everything"; //'get everything' is the message
+getEverything().then((message) => console.log(message)); //here, '.then' tells you when the promise is finished
+
+console.log("person 4: shows ticket");
+console.log("person 5: shows ticket");
+*/
+
+
+console.log("person 1: shows ticket");
+console.log("person 2: shows ticket");
+const getEverything = async () => {
+
+};
+getEverything().then((message) => console.log(message));
+
 console.log("person 4: shows ticket");
 console.log("person 5: shows ticket");
