@@ -120,7 +120,7 @@ getEverything().then((t) => {
 console.log("person 4: shows ticket");
 console.log("person 5: shows ticket");
 */
-
+/*
 console.log("person 1: shows ticket");
 console.log("person 2: shows ticket");
 const getEverything = async () => {
@@ -144,3 +144,35 @@ getEverything().then((t) => {
 
 console.log("person 4: shows ticket");
 console.log("person 5: shows ticket");
+*/
+
+/*
+console.log("person 1: shows ticket");
+console.log("person 2: shows ticket");
+const getEverything = async () => {
+  const promiseFriendBringsTicket = new Promise((resolve, reject) => {
+    setTimeout(() => reject("ticket"), 3000);
+  });
+  const getPopcorn = new Promise((resolve, reject) =>
+    resolve("salted popcorn,")
+  );
+  const getButter = new Promise((resolve, reject) => resolve("smooth butter"));
+  let ticket;
+  try {
+    ticket = await promiseFriendBringsTicket;
+    console.log('"lets go get popcorn"');
+  } catch (err) {
+    ticket = "no emotion...she never came back :(";
+  }
+  let [popcorn, butter] = await Promise.all([getPopcorn, getButter]);
+  console.log(popcorn, butter);
+
+  return ticket;
+};
+getEverything().then((t) => {
+  console.log("person 3: shows " + t);
+});
+
+console.log("person 4: shows ticket");
+console.log("person 5: shows ticket");
+*/
